@@ -1,0 +1,111 @@
+/* TrainingMessages.css */
+.bartle-message-filter {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+}
+
+.filter-button svg {
+  margin-right: 8px;
+}
+
+.filter-button.achiever {
+  background: linear-gradient(45deg, #FFA500, #FFD700);
+}
+
+.filter-button.explorer {
+  background: linear-gradient(45deg, #8BC34A, #4CAF50);
+}
+
+.filter-button.socializer {
+  background: linear-gradient(45deg, #03A9F4, #2196F3);
+}
+
+.filter-button.killer {
+  background: linear-gradient(45deg, #E91E63, #FF4081);
+}
+
+.filter-button.all {
+  background-color: #808080;
+}
+
+.filter-button.active {
+  background: #2c2c2c;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.message-item {
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-item.achiever {
+  background: linear-gradient(45deg, #ffffff,#ffffff,#ffffff,#ffffff, #FFA500);
+}
+
+.message-item.explorer {
+  background: linear-gradient(45deg, #ffffff,#ffffff,#ffffff,#ffffff, #8BC34A);
+}
+
+.message-item.socializer {
+  background: linear-gradient(45deg, #ffffff,#ffffff,#ffffff,#ffffff, #03A9F4);
+}
+
+.message-item.killer {
+  background: linear-gradient(45deg, #ffffff,#ffffff,#ffffff,#ffffff, #E91E63);
+}
+
+.message-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.message-classification,
+.message-date {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+
+  .filter-button {
+    margin: 5px;
+  }
+
+  .message-grid {
+    grid-template-columns: 1fr;
+  }
+}

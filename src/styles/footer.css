@@ -1,0 +1,131 @@
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(90deg, #fffcf2 0%, #ffe0b2 100%);
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+  }
+  
+  /* Footer Header Text */
+  .footer-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff; /* Blue color */
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Fade-in animation for header */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Tiny Button in Upper Right Corner */
+  .button-wrapper {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .tiny-button {
+    background-color: #f46e0e;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .tiny-button:hover {
+    background-color: #ff5722; /* Darker orange */
+    transform: scale(1.1);
+  }
+  
+  /* Rollover Effect for Button */
+  .tiny-button::after {
+    content: 'Contact';
+    opacity: 0;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background: #007bff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    color: white;
+    transition: opacity 0.3s ease;
+  }
+  
+  .tiny-button:hover::after {
+    opacity: 1;
+  }
+  
+  /* Left Corner Text */
+  .footer-credit {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    animation: fadeInLeft 2s ease-in-out;
+  }
+  
+  /* Fade-in Left Animation for Credit Text */
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  
+  /* Medium screens (tablets) */
+  @media (max-width: 768px) {
+    .footer-header {
+      font-size: 1.3rem;
+    }
+  
+    .tiny-button {
+      font-size: 0.8rem;
+      padding: 0.4rem;
+    }
+  
+    .footer-credit {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Small screens (phones) */
+  @media (max-width: 480px) {
+    .footer-header {
+      font-size: 1.2rem;
+    }
+  
+    .tiny-button {
+      font-size: 0.7rem;
+      padding: 0.3rem;
+    }
+  
+    .footer-credit {
+      font-size: 0.7rem;
+    }
+  }
+  

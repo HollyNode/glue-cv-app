@@ -1,0 +1,223 @@
+.showcase {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 400vh; /* Adjust this to match the ScrollTrigger end value */
+    padding: 2rem;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+ 
+  .sticky-indicator {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1001;
+  }
+  
+  .showcase-content {
+    margin-top: 170px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .showcase-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .showcase-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    min-height: 6em; /* Use min-height instead of fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 8;
+  }
+  
+  .showcase-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .showcase-rectangle {
+    background-color: white;
+    border: 2px solid #f687b3;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 6;
+    position: relative;
+    width: calc(100% + 40px);
+    margin-left: -30px;
+    min-height: 5rem;
+  }
+
+  .showcase-rectangle span {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -10%);
+    z-index: 10;
+    color: #000; /* Adjust color as needed */
+    font-weight: bold;
+    font-size: 1.2em; /* Adjust size as needed */
+   
+
+  }
+  
+  .achievement-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .achievement-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .coin-image {
+    position: absolute;
+    top: -130px; /* Start 130px above the rectangle */
+    width: 3rem;
+    height: 3rem;
+    z-index: 5;
+    opacity: 0; /* Start invisible */
+  }
+  
+  .threads, .charts {
+    width: 100%;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;  }
+  
+  .thread {
+    margin-top: 10px;
+    display: flex;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+  
+  .thread img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  
+  .chart {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .showcase-content {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .showcase-text {
+      width: 50%;
+      text-align: left;
+      margin-right: 2rem;
+      margin-bottom: 0;
+    }
+  
+    .showcase-visual {
+      width: 50%;
+    }
+    .showcase-rectangle {
+        width: 100%; /* Ensure this takes full width on smaller screens */
+        margin-left: 0;
+      }
+    
+      .coin-image {
+        top: -100px; /* Adjust based on screen size */
+      }
+    }
+
+    .bonus-box-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 2rem;
+    }
+    
+    .bonus-box {
+      background: linear-gradient(90deg, #ffffff, #faf0db);
+      border: 2px solid #f75e50;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .bonus-box:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .bonus-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .bonus-content h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    .bonus-text {
+      color: #f75e50; /* Updated to match the border color */
+    }
+    
+    .bonus-content p {
+      font-size: 1.2rem;
+      margin: 0;
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    
+    /* Add a subtle hover effect for each technology */
+    .bonus-content p:hover {
+      color: #f75e50;
+      transform: translateX(5px);
+      transition: all 0.3s ease;
+    }
+    
+    /* Add a decorative element */
+    .bonus-box::before {
+      content: "{ }";
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      font-size: 3rem;
+      color: #f75e50;
+      opacity: 0.2;
+      transform: rotate(15deg);
+    }
+    
+    /* Ensure the box is centered on all screen sizes */
+    @media (max-width: 768px) {
+      .bonus-box {
+        max-width: 90%;
+      }
+    }

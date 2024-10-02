@@ -1,0 +1,146 @@
+/* Container styling */
+.video-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video Header */
+.video-header {
+  font-size: 2.5rem;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  opacity: 0;
+}
+
+/* Icons Container */
+.icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Icon Styling */
+.icon {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Positioning individual icons */
+.icon-react {
+  top: 20%;
+  left: 10%;
+}
+
+.icon-tailwind {
+  top: 30%;
+  right: 15%;
+}
+
+.icon-api {
+  top: 70%;
+  right: 20%;
+}
+
+.icon-graphql {
+  bottom: 20%;
+  left: 25%;
+}
+
+.icon-ai {
+  top: 50%;
+  left: 5%;
+}
+
+.icon-typescript {
+  bottom: 30%;
+  right: 10%;
+}
+
+/* MB Icon */
+.mb-icon-video {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  height: 10rem;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  scale: 0.5;
+}
+
+/* New Header */
+.new-header {
+  font-size: 1.5rem;
+  text-align: center;
+  position: absolute;
+  bottom: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #2563eb;
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .video-header {
+    font-size: 2rem;
+  }
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .mb-icon-video {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .new-header {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .video-header {
+    font-size: 1.8rem;
+  }
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+
+  .new-header {
+    font-size: 1.2rem;
+  }
+
+  .mb-icon-video {
+    width: 8rem;
+    height: 8rem;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+}

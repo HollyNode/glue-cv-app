@@ -1,0 +1,173 @@
+/* Container styling */
+.description-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Card styling */
+.description-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  max-width: 700px;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Left column styling */
+.left-column {
+  flex: 1;
+  padding: 3rem;
+}
+
+.right-column {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Header styling */
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Icon circle container */
+.icon-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+/* Tech icons */
+.tech-icon {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+}
+
+/* MB icon styling */
+.mb-icon {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  opacity: 1;
+
+}
+
+/* Large screen layout */
+@media (min-width: 769px) {
+  .icon-circle {
+    position: absolute;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .icon-top {
+    top: -20px;
+    right: 75px;
+  }
+  
+  .icon-right {
+    top: 75px;
+    right: -20px;
+  }
+  
+  .icon-bottom-right {
+    bottom: -20px;
+    right: 75px;
+  }
+  
+  .icon-bottom-left {
+    bottom: 75px;
+    left: -20px;
+  }
+}
+
+/* Small screen layout */
+@media (max-width: 768px) {
+  .description-card {
+    flex-direction: column;
+  }
+  
+  .left-column, .right-column {
+    padding: 2rem;
+  }
+  
+  .icon-circle {
+    width: 150px;
+    height: 150px;
+    margin: 2rem auto 0;
+  }
+  
+  .tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .icon-top {
+    top: 0;
+    left: 0;
+  }
+  
+  .icon-right {
+    top: 0;
+    right: 0;
+  }
+  
+  .icon-bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  
+  .icon-bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .mb-icon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    opacity: 1;
+  
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+}
