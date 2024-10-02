@@ -1,7 +1,8 @@
+// TrainingMessages.tsx
 import React, { useState } from 'react';
-import { Trophy, Compass, Users, Swords, List } from 'lucide-react';
-import trainingMessagesData from '../data/bartle-analyzer.trainingmessages.json';
+import { useQuery, gql } from '@apollo/client';
 import '../styles/TrainingMessages.css';
+import { Trophy, Compass, Users, Swords, List } from 'lucide-react';
 
 interface TrainingMessage {
   id: string;
@@ -10,8 +11,16 @@ interface TrainingMessage {
   createdAt: string;
 }
 
-// Explicitly type the imported JSON as an array of TrainingMessage
-const trainingMessages: TrainingMessage[] = trainingMessagesData;
+const GET_TRAINING_MESSAGES = gql`
+  query GetTrainingMessages {
+    trainingMessages {
+      id
+      text
+      classification
+      createdAt
+    }
+  }
+`;
 
 const classifications = [
   { name: 'Achiever', Icon: Trophy },
@@ -21,13 +30,18 @@ const classifications = [
 ];
 
 function TrainingMessages() {
-  // Ensure filter is typed correctly
+  const { loading, error, data } = useQuery<{ trainingMessages: TrainingMessage[] }>(GET_TRAINING_MESSAGES);
   const [filter, setFilter] = useState<string | null>(null);
 
-  // Type inference will now work better with the explicitly typed trainingMessages
+  if (loading) return <p>Loading...</p>;
+  if (error) {
+    console.error("GraphQL error:", error);
+    return <p>Error: {error.message}</p>;
+  }
+
   const filteredMessages = filter
-    ? trainingMessages.filter((message: TrainingMessage) => message.classification === filter)
-    : trainingMessages;
+    ? data?.trainingMessages.filter(message => message.classification === filter)
+    : data?.trainingMessages;
 
   return (
     <div className="bartle-message-filter">
@@ -52,7 +66,7 @@ function TrainingMessages() {
         </button>
       </div>
       <div className="message-grid">
-        {filteredMessages?.map((message: TrainingMessage) => (
+        {filteredMessages?.map((message) => (
           <div key={message.id} className={`message-item ${message.classification.toLowerCase()}`}>
             <p className="message-text">{message.text}</p>
             <p className="message-classification">Classification: {message.classification}</p>
