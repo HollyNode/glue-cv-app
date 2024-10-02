@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
       {/* Loom video iframe */}
       <div className="video-player">
         <iframe
-          src="https://www.loom.com/embed/3e1c85795ebb4f2cb4d6a345d31c328a?sid=e07b88c3-0c06-4845-8c0e-aae881f22347"
+          src="https://www.loom.com/embed/3e1c85795ebb4f2cb4d6a345d31c328a?sid=ad168928-e46f-4dca-9a56-33b99e3a53bd"
           frameBorder="0"
           allowFullScreen
           title="Loom video player"
